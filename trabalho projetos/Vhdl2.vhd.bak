@@ -1,0 +1,31 @@
+-- circuito xyz
+
+library IEEE;
+use std_logic_1164.all;
+
+entity log_xyz is port
+(
+		o_xyz : out std_logic_vector (2 downto 0);
+		i_a	: in std_logic_vector (1 downto 0)
+
+);
+end log_xyz;
+
+architecture log of log_xyz is
+begin 
+	process(i_a)
+	begin
+		if (i_a = "11")then
+		o_xyz <= "100";-- x recebe 1
+		
+			elsif(i_a = "10")then
+			o_xyz <= "010";-- y recebe 1
+			
+			elsif (i_a = "01") then
+			o_xyz <= "001"	;-- z recebe 1
+			
+			elsif (i_a = "00")then
+			o_xyz <= "000";-- quando s1,s0= 00 (estado atual inicial) xyz sao: 000.
+		end if;
+	end process;
+end log;

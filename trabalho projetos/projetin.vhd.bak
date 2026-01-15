@@ -1,0 +1,32 @@
+-- LEonardo carvalho bikulcius
+--28/10
+--maquina de estado apenas com saidasxyz em ciclos
+--
+--
+--
+library IEEE;
+use std_logic_1164.all;
+
+entity projetin is port
+(
+	i_clk 	: in std_logic
+	i_xyz		: out std_logic_vector (2 downto 0);
+	i_now  : in 	std_logic_vector (1 downto 0);
+	o_prox	: out std_logic_vector (1 downto 0)
+
+);
+architecture hardware of projetin is
+	component log_xyz is port
+	(
+		o_xyz : out std_logic_vector (2 downto 0);
+		i_a	: in std_logic_vector (1 downto 0)
+	);
+	end component;
+	component log_next is port
+	(
+	o_next : out std_logic_vector (1 downto 0);
+	i_atual	: in std_logic_vector (1 downto 0)
+	);
+	end component;
+begin 
+ u_
